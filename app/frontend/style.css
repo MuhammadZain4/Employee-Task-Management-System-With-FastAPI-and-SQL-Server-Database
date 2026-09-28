@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+  background: #f4f6fa;
+  color: #333;
+}
+
+.hidden { display: none !important; }
+
+/* ---------- LOGIN ---------- */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.login-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 380px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.login-box h2 { color: #4f46e5; margin-bottom: 6px; }
+.login-box .subtitle { color: #888; margin-bottom: 24px; font-size: 14px; }
+
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.login-box input:focus { border-color: #4f46e5; }
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login-box button:hover { background: #4338ca; }
+
+.error-msg { color: #e11d48; margin-top: 10px; font-size: 13px; }
+
+/* ---------- SWITCH LOGIN / SIGNUP LINK ---------- */
+.switch-form {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.switch-form a {
+  color: #4f46e5;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.switch-form a:hover { text-decoration: underline; }
+
+/* ---------- APP LAYOUT ---------- */
+.app { display: flex; min-height: 100vh; }
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  width: 240px;
+  background: #1e293b;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  position: fixed;
+  height: 100vh;
+}
+
+.logo { padding: 0 24px 24px; border-bottom: 1px solid #334155; }
+.logo h2 { color: #818cf8; font-size: 26px; }
+.logo span { color: #94a3b8; font-size: 12px; }
+
+.menu { flex: 1; padding: 20px 0; }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 24px;
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.menu-item:hover { background: #334155; color: #fff; }
+
+.menu-item.active {
+  background: #334155;
+  color: #fff;
+  border-left: 3px solid #818cf8;
+}
+
+.icon { font-size: 18px; }
+
+.logout-btn {
+  margin: 0 20px;
+  padding: 10px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+.logout-btn:hover { background: #b91c1c; }
+
+/* ---------- MAIN CONTENT ---------- */
+.main-content {
+  flex: 1;
+  margin-left: 240px;
+  padding: 30px 40px;
+}
+
+.page { display: none; }
+.page.active-page { display: block; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-header h1 { font-size: 26px; color: #1e293b; }
+.welcome { color: #64748b; font-size: 14px; }
+
+/* ---------- STATS ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 22px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border-left: 5px solid;
+  transition: 0.2s;
+}
+.stat-card:hover { transform: translateY(-3px); }
+
+.stat-icon { font-size: 32px; }
+
+.stat-card h3 { font-size: 28px; color: #1e293b; }
+.stat-card p { color: #64748b; font-size: 13px; }
+
+.stat-card.blue { border-color: #3b82f6; }
+.stat-card.green { border-color: #10b981; }
+.stat-card.orange { border-color: #f59e0b; }
+.stat-card.purple { border-color: #8b5cf6; }
+
+/* ---------- TABLES ---------- */
+.table-container {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+table { width: 100%; border-collapse: collapse; }
+
+thead { background: #f1f5f9; }
+
+th, td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th { color: #475569; font-weight: 600; }
+tbody tr:hover { background: #f8fafc; }
+
+/* ---------- BUTTONS ---------- */
+.btn-primary {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+.btn-primary:hover { background: #4338ca; }
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #334155;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-right: 6px;
+}
+.btn-edit { background: #f59e0b; color: white; }
+.btn-delete { background: #dc2626; color: white; }
+
+/* ---------- STATUS BADGE ---------- */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge.pending { background: #fef3c7; color: #92400e; }
+.badge.completed { background: #d1fae5; color: #065f46; }
+.badge.inprogress { background: #dbeafe; color: #1e40af; }
+
+/* ============================================================ */
+/* ---------- MODAL (FIXED Z-INDEX) ---------- */
+/* ============================================================ */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 28px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 90%;
+  position: relative;   /* ← YE ADD KIYA */
+  z-index: 1001;        /* ← YE ADD KIYA */
+}
+
+.modal-box h2 { margin-bottom: 18px; color: #1e293b; }
+
+.modal-box input,
+.modal-box select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.modal-box input:focus,
+.modal-box select:focus { border-color: #4f46e5; }
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  position: relative;   /* ← YE ADD KIYA */
+  z-index: 1002;        /* ← YE ADD KIYA */
+}

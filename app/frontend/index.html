@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee & Task Management System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="login-container">
+    <div class="login-box">
+      <h2>Employee & Task Management</h2>
+      <p class="subtitle" id="formSubtitle">Login to continue</p>
+
+      <!-- LOGIN FORM -->
+      <form id="loginForm">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- SIGNUP FORM (hidden by default) -->
+      <form id="signupForm" class="hidden">
+        <input type="text" id="signupUsername" placeholder="Username" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <p id="loginError" class="error-msg"></p>
+
+      <p class="switch-form">
+        <span id="switchText">Don't have an account?</span>
+        <a href="#" id="switchFormBtn">Sign Up</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="app hidden">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>EMS</h2>
+        <span>Management System</span>
+      </div>
+      <nav class="menu">
+        <a href="#" class="menu-item active" data-page="dashboard">
+          <span class="icon">📊</span> Dashboard
+        </a>
+        <a href="#" class="menu-item" data-page="employees">
+          <span class="icon">👥</span> Employees
+        </a>
+        <a href="#" class="menu-item" data-page="tasks">
+          <span class="icon">📝</span> Tasks
+        </a>
+      </nav>
+      <button id="logoutBtn" class="logout-btn">🚪 Logout</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+      <!-- DASHBOARD -->
+      <section id="dashboardPage" class="page active-page">
+        <header class="page-header">
+          <h1>Dashboard</h1>
+          <span id="welcomeUser" class="welcome"></span>
+        </header>
+
+        <div class="stats-grid">
+          <div class="stat-card blue">
+            <div class="stat-icon">👥</div>
+            <div>
+              <h3 id="totalEmployees">0</h3>
+              <p>Total Employees</p>
+            </div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-icon">📝</div>
+            <div>
+              <h3 id="totalTasks">0</h3>
+              <p>Total Tasks</p>
+            </div>
+          </div>
+          <div class="stat-card orange">
+            <div class="stat-icon">⏳</div>
+            <div>
+              <h3 id="pendingTasks">0</h3>
+              <p>Pending Tasks</p>
+            </div>
+          </div>
+          <div class="stat-card purple">
+            <div class="stat-icon">✅</div>
+            <div>
+              <h3 id="completedTasks">0</h3>
+              <p>Completed Tasks</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMPLOYEES -->
+      <section id="employeesPage" class="page">
+        <header class="page-header">
+          <h1>Employees</h1>
+          <button class="btn-primary" id="addEmployeeBtn">+ Add Employee</button>
+        </header>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="employeesTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- TASKS -->
+      <section id="tasksPage" class="page">
+        <header class="page-header">
+          <h1>Tasks</h1>
+          <button class="btn-primary" id="addTaskBtn">+ Assign Task</button>
+        </header>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Task Name</th>
+                <th>Employee ID</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="tasksTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <h2 id="modalTitle">Add</h2>
+      <form id="modalForm"></form>
+      <div class="modal-actions">
+        <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+        <button type="button" class="btn-primary" id="saveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
